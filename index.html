@@ -1155,9 +1155,13 @@ function showCurrentItem(){
   lbTitle.textContent =
     it.title;
 
-  lbSub.textContent =
-    it.sub;
+  // lbSub.textContent =
+  //   it.sub;
 
+  lbSub.textContent =
+  isSong
+    ? it.sub
+    : `${it.medium} — ${it.sub}`;
 
   lightbox.classList.add('open');
 
