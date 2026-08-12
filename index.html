@@ -827,25 +827,29 @@ const ARTWORKS = [
   {
     img:'artworks/birth.png',
     title:'birth',
-    sub:'Pen & pencil on paper, digital layering — 2021'
+    sub:'Pen & pencil on paper, digital layering',
+    year: '2021'  
   },
 
   {
     img:'artworks/i.jpg',
     title:'i',
-    sub:'digital illustration, digital layering — 2026'
+    sub:'digital illustration, digital layering — 2026',
+    year: '2026'
   },
 
   {
     img:'artworks/smokeless.jpg',
     title:'smokeless',
-    sub:'Pen & pencil on paper, digital layering — 2021'
+    sub:'Pen & pencil on paper, digital layering — 2021',
+    year: '2021'
   },
 
   {
     img:'artworks/soul.jpg',
     title:'soul',
-    sub:'Pen & pencil on paper, digital layering — 2020'
+    sub:'Pen & pencil on paper, digital layering — 2020',
+    year:'2021'
   }
 
 ];
@@ -998,6 +1002,11 @@ function openCategory(kind){
         <span class="meta-title">
           ${it.title}
         </span>
+
+        <span class="meta-sub">
+         ${it.year}
+        </span>
+
       </figcaption>
 
     `;
@@ -1160,8 +1169,8 @@ function showCurrentItem(){
 
   lbSub.textContent =
   isSong
-    ? it.sub
-    : `${it.medium} — ${it.sub}`;
+    ? it.year
+    : `${it.medium} — ${it.year}`;
 
   lightbox.classList.add('open');
 
