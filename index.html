@@ -66,7 +66,7 @@
   header h1{
     font-size:clamp(46px, 7vw, 84px);
     line-height:1;
-    transform:rotate(-1.4deg);
+    transform:rotate(-2deg);
     text-shadow:2px 0 var(--red), -2px 0 var(--acid);
     animation: artistBlink 1s steps(1, end) infinite;
   }
@@ -135,15 +135,17 @@
     cursor:pointer;
     font-family:"Times New Roman", Times, serif;
     font-size:clamp(20px,2vw,30px); /* 24, 3, 34*/
-    color:var(--paper);
-    text-shadow:1px 0 var(--red), -1px 0 var(--acid);
+    color:#fff;
+    font-weight:400;
+    text-shadow:none;
   }
   .sq-caption .arrow{
-    color:var(--red);text-shadow:none;
-    transition:transform .2s ease;
+    /* color:var(--red);text-shadow:none;
+    transition:transform .2s ease; */
+    color:#fff;
   }
   .category-item:hover .sq-caption .arrow{transform:translateX(6px);}
-  .category-item:hover .sq-caption{color:var(--acid);}
+  /* .category-item:hover .sq-caption{color:var(--acid);} */
 
   /* ---------- DETAIL VIEW ---------- */
   #detailView{display:none;max-width:1400px;margin:0 auto;}
