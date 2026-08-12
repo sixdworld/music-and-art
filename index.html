@@ -228,11 +228,11 @@
 <body>
 
 <header>
-  <h1 contenteditable="true">6dchair</h1>
+  <h1 contenteditable="true">Artist's name</h1>
   <div class="subline">
-    <span contenteditable="true">gracedave torsino</span>
+    <span contenteditable="true">real name</span>
     <span class="divider"></span>
-    <span contenteditable="true">Philippines</span>
+    <span contenteditable="true">country</span>
   </div>
 </header>
 
@@ -311,21 +311,30 @@ const ARTWORKS = [
 /* ---------- HOME SQUARE SLIDESHOWS ---------- */
 function buildSlideshow(containerId, items, imgKey){
   const container = document.getElementById(containerId);
+
+  // Preload all slideshow images
+  items.forEach(it => {
+    const img = new Image();
+    img.src = it[imgKey];
+  });
+
   items.forEach((it,i)=>{
     const slide = document.createElement('div');
     slide.className = 'slide' + (i === 0 ? ' active' : '');
     slide.style.backgroundImage = `url('${it[imgKey]}')`;
-    container.prepend(slide);
+    container.appendChild(slide);
   });
+
   let idx = 0;
   const slides = () => container.querySelectorAll('.slide');
+
   if(items.length > 1){
     setInterval(()=>{
       const s = slides();
       s[idx].classList.remove('active');
       idx = (idx + 1) % s.length;
       s[idx].classList.add('active');
-    }, 800);
+    }, 600);
   }
 }
 buildSlideshow('sqSongs', SONGS, 'cover');
