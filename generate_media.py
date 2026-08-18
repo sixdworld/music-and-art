@@ -14,14 +14,17 @@ FOLDER STRUCTURE THIS EXPECTS (create these next to this script):
 
 USAGE:
   1. Put this script in the same folder as your videos/, covers/,
-     and artworks/ folders.
+     artworks/ folders, AND index.html.
   2. Run it:  python3 generate_media.py
   3. It creates generated-media.js with the SONGS and ARTWORKS arrays.
-  4. Open generated-media.js, copy its contents, and paste them over
-     the existing SONGS / ARTWORKS block in portfolio.html.
+  4. Just open index.html in the browser — it loads generated-media.js
+     automatically via <script src="generated-media.js">, so there's
+     no copy-pasting required.
   5. Titles are guessed from the filename (dashes/underscores become
-     spaces, capitalized). The "sub" field (year/caption) is left as
-     a placeholder "20XX" for you to edit by hand afterward.
+     spaces, capitalized). The "year" field (and "medium" for
+     artworks) is left as a placeholder ("20XX" / "Medium") for you
+     to edit by hand afterward, either directly in generated-media.js
+     or by re-running this script.
 
 Nothing here uploads or sends your files anywhere — it only reads
 filenames on your own computer and writes a text file next to it.
@@ -75,7 +78,7 @@ def build_songs():
             cover_path = 'images/PLACEHOLDER.jpg'
         title = title_from_filename(v)
         lines.append(
-            f"  {{cover:'{cover_path}', video:'{video_path}', title:'{title}', sub:'20XX'}},"
+            f"  {{cover:'{cover_path}', video:'{video_path}', title:'{title}', year:'20XX'}},"
         )
     return lines, missing_covers
 
@@ -86,7 +89,7 @@ def build_artworks():
     for img in images:
         title = title_from_filename(img)
         lines.append(
-            f"  {{img:'{ARTWORKS_DIR}/{img}', title:'{title}', sub:'Medium — 20XX'}},"
+            f"  {{img:'{ARTWORKS_DIR}/{img}', title:'{title}', medium:'Medium', year:'20XX'}},"
         )
     return lines
 
@@ -108,8 +111,8 @@ def main():
         f.write('\n'.join(out) + '\n')
 
     print(f'Found {len(song_lines)} song(s) and {len(artwork_lines)} artwork(s).')
-    print(f'Written to {OUTPUT_FILE} — open it, copy the contents, and paste')
-    print('them over the SONGS / ARTWORKS block in portfolio.html.')
+    print(f'Written to {OUTPUT_FILE} — just open index.html in your browser,')
+    print('it loads this file automatically. No copy-pasting needed.')
     if missing_covers:
         print('')
         print('NOTE: no matching cover image found in covers/ for:')

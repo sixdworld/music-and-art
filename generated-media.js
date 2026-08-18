@@ -1,12 +1,25 @@
 const SONGS = [
-  {cover:'covers/blue.png', video:'videos/blue.mp4', title:'Blue', sub:'20XX'},
-  {cover:'covers/loathe-crackers.png', video:'videos/loathe-crackers.mp4', title:'Loathe Crackers', sub:'20XX'},
-  {cover:'covers/selective-violence.png', video:'videos/selective-violence.mp4', title:'Selective Violence', sub:'20XX'},
+  {cover:'covers/blue.png', video:'videos/blue.mp4', title:'blue', year:'2024'},
+  {cover:'covers/loathe-crackers.png', video:'videos/loathe-crackers.mp4', title:'loathe crackers (for breakfast my love)', year:'2025'},
+  {cover:'covers/selective-violence.png', video:'videos/selective-violence.mp4', title:'selective violence', year:'2024'},
 ];
 
 const ARTWORKS = [
-  {img:'artworks/birth.jpg', title:'Birth', sub:'Medium — 20XX'},
-  {img:'artworks/i.jpg', title:'I', sub:'Medium — 20XX'},
-  {img:'artworks/smokeless.jpg', title:'Smokeless', sub:'Medium — 20XX'},
-  {img:'artworks/soul.jpg', title:'Soul', sub:'Medium — 20XX'},
+  {img:'artworks/wfore.png', title:'wfore', medium:'digital art, digital layering', year:'2026'},
+  {img:'artworks/connect_watercolor.png', title:'connect_1', medium:'"connect" processed on Canva', year:'2026'},
+  {img:'artworks/four.png', title:'four', medium:'pencil/pen on paper, digital layering', year:'2021'},
+  {img:'artworks/i_s.png', title:'i_s', medium:'pencil/pen on paper, digital layering', year:'2021'},
+  {img:'artworks/inborn.png', title:'inborn', medium:'pencil/pen on paper, digital layering', year:'2021'},
+  {img:'artworks/smokeless.png', title:'smokeless', medium:'pencil/pen on paper, digital layering', year:'2021'},
+  {img:'artworks/connect.png', title:'connect', medium:'digital art, digital layering', year:'2026'},
+  {img:'artworks/inborn_watercolor.png', title:'inborn_1', medium:'"inborn" processed on Canva', year:'20XX'},
+  {img:'artworks/speyeral_colored.png', title:'speyeral', medium:'digital art, digital layering', year:'2025'},
+  {img:'artworks/three.png', title:'three', medium:'pencil/pen on paper, digital layering', year:'2021'},
+  {img:'artworks/toilet_hands.png', title:'toilet hands', medium:'digital art, digital layering', year:'2024'},
+  {img:'artworks/i_s_watercolor.png', title:'i_s_1', medium:'"i_s" processed on Canva', year:'2026'},
+  {img:'artworks/two.png', title:'two', medium:'pencil/pen on paper, digital layering', year:'2022'},
+  {img:'artworks/bluestzombie_0.png', title:'the_bluestzombie_0', medium:'digital art', year:'2023'},
+  {img:'artworks/bluestzombie_1.png', title:'the_bluestzombie_1', medium:'digital art', year:'2023'},
+  {img:'artworks/wan.png', title:'wan', medium:'pencil/pen on paper, digital layering', year:'2023'},
+  {img:'artworks/whtvr.png', title:'whtvr', medium:'digital art, digital layering', year:'2023'},
 ];

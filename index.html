@@ -11,19 +11,19 @@
 
 <style>
 
-  /* ---------- COLORS ---------- */
+  /* ---------- COLORS (dark theme) ---------- */
 
   :root{
-    --ink:#F3F3F3;
-    --paper:#111111;
-    --paper-dim:#666666;
+    --ink:#100F0D;
+    --paper:#E7E1CF;
+    --paper-dim:#9c9682;
 
     --red:#C21E24;
-    --acid:#7A8F16;
+    --acid:#9FB233;
     --tape:#D9C877;
 
-    --line:rgba(17,17,17,0.14);
-    --line-strong:rgba(17,17,17,0.30);
+    --line:rgba(231,225,207,0.18);
+    --line-strong:rgba(231,225,207,0.36);
   }
 
 
@@ -56,8 +56,8 @@
     z-index:999;
     pointer-events:none;
 
-    opacity:0.04;
-    mix-blend-mode:multiply;
+    opacity:0.08;
+    mix-blend-mode:overlay;
 
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -67,7 +67,7 @@
 
   ::selection{
     background:var(--red);
-    color:#fff;
+    color:var(--paper);
   }
 
 
@@ -186,7 +186,7 @@
 
     cursor:pointer;
 
-    background:#F3F3F3;
+    background:#000;
 
     border:none;
     outline:none;
@@ -202,22 +202,23 @@
     background-size:cover;
     background-position:center;
 
-    opacity:100;
+    opacity:0;
+    filter: none;
 
-    transition:opacity 0s ease;
+    /* transition:opacity 1s ease;
 
-    /* filter:contrast(1.1) brightness(.85); */
+    filter:contrast(1.1) brightness(.85); */ 
   }
 
   .category-square .slide.active{
     opacity:1;
   }
 
-  .category-square:hover .slide.active{
+  /* .category-square:hover .slide.active{
     filter:contrast(1.1) brightness(.95);
-  }
+  } */
 
-  .category-square::after{
+  /* .category-square::after{
     content:'';
 
     position:absolute;
@@ -227,16 +228,16 @@
 
     background-image:
       radial-gradient(
-        rgba(255,255,255,0.5) 1px,
+        rgba(231,225,207,0.5) 1px,
         transparent 1.3px
       );
 
     background-size:4px 4px;
 
-    mix-blend-mode:screen;
+    mix-blend-mode:multiply;
 
-    opacity:0.12;
-  }
+    opacity:0.35;
+  } */
 
 
   /* ---------- CATEGORY TITLE ---------- */
@@ -259,17 +260,17 @@
 
     font-size:clamp(16px,1.5vw,22px);
 
-    color:#111;
+    color:var(--paper);
 
     font-weight:400;
 
     text-shadow:none;
   }
 
-  /* .sq-caption .arrow{
-    color:#111;
+  .sq-caption .arrow{
+    color:var(--red);
     transition:transform .2s ease;
-  } */
+  }
 
   .category-item:hover .sq-caption .arrow{
     transform:translateX(4px);
@@ -364,7 +365,7 @@
     position:relative;
     overflow:hidden;
 
-    background:#F3F3F3;
+    background:#000;
 
     border:none;
     outline:none;
@@ -393,15 +394,15 @@
 
     background-image:
       radial-gradient(
-        rgba(255,255,255,0.5) 1px,
+        rgba(231,225,207,0.5) 1px,
         transparent 1.3px
       );
 
     background-size:4px 4px;
 
-    mix-blend-mode:screen;
+    mix-blend-mode:multiply;
 
-    opacity:0.10;
+    opacity:0.3;
   }
 
   .item-tile:hover .frame img{
@@ -425,7 +426,7 @@
     height:26px;
 
     background:var(--red);
-    color:#fff;
+    color:var(--paper);
 
     z-index:2;
 
@@ -483,7 +484,7 @@
     position:fixed;
     inset:0;
 
-    background:rgba(243,243,243,0.97);
+    background:rgba(4,4,3,0.97);
 
     display:none;
 
@@ -527,7 +528,7 @@
 
     font-size:22px;
 
-    color:#111;
+    color:var(--paper);
 
     text-shadow:none;
 
@@ -539,7 +540,7 @@
 
     font-size:14px;
 
-    color:#666;
+    color:var(--paper-dim);
 
     letter-spacing:normal;
 
@@ -567,7 +568,7 @@
 
     cursor:pointer;
 
-    color:#111;
+    color:var(--paper-dim);
   }
 
   .lb-close:hover{
@@ -598,7 +599,7 @@
   }
 
   .social-links{
-    margin-top:6px;
+    margin-top:-5px;
   }
 
   .social-links a:hover{
@@ -614,12 +615,12 @@
 
 <header>
 
-  <h1 contenteditable="true">Artist Name</h1>
+  <h1 contenteditable="true">6dchair</h1>
 
   <div class="subline">
 
     <span contenteditable="true">
-      Real Name // Country
+      gracedave j. torsino  //  Philippines
     </span>
 
   </div>
@@ -713,7 +714,7 @@
 <footer>
 
   <div>
-    © 2026 6dchair | More music in my socials:
+    © 2026 6dchair | More music on my socials :>>
   </div>
 
   <div class="social-links">
@@ -792,71 +793,17 @@
 </div>
 
 
+<!--
+  CONTENT SOURCE
+  SONGS and ARTWORKS are no longer hardcoded here — they're declared
+  in generated-media.js, which must sit in the same folder as this
+  file. Run generate_media.py any time your videos/covers/artworks
+  folders change, and this page will pick up the new content on
+  next reload, no copy-pasting into the HTML required.
+-->
+<script src="generated-media.js"></script>
+
 <script>
-
-
-/* =====================================================================
-   CONTENT
-   ===================================================================== */
-
-
-const SONGS = [
-
-  {
-    cover:'covers/blue.png',
-    video:'videos/blue.mp4',
-    title:'blue',
-    year:'2024'
-  },
-
-  {
-    cover:'covers/loathe-crackers.png',
-    video:'videos/loathe-crackers.mp4',
-    title:'loathe crackers (for breakfast my love)',
-    year:'2025'
-  },
-
-  {
-    cover:'covers/selective-violence.png',
-    video:'videos/selective-violence.mp4',
-    title:'selective violence',
-    year:'2024'
-  }
-
-];
-
-
-const ARTWORKS = [
-
-  {
-    img:'artworks/birth.png',
-    title:'birth',
-    medium:'Pen & pencil on paper, digital layering',
-    year: '2021'  
-  },
-
-  {
-    img:'artworks/i.jpg',
-    title:'i',
-    medium:'digital illustration, digital layering — 2026',
-    year: '2026'
-  },
-
-  {
-    img:'artworks/smokeless.jpg',
-    title:'smokeless',
-    medium:'Pen & pencil on paper, digital layering — 2021',
-    year: '2021'
-  },
-
-  {
-    img:'artworks/soul.jpg',
-    title:'soul',
-    medium:'Pen & pencil on paper, digital layering — 2020',
-    year:'2021'
-  }
-
-];
 
 
 /* ---------- HOME SLIDESHOWS ---------- */
@@ -997,7 +944,8 @@ function openCategory(kind){
 
         <img
           src="${cover}"
-          alt="${it.title}">
+          alt="${it.title}"
+          loading="lazy">
 
       </div>
 
@@ -1168,13 +1116,10 @@ function showCurrentItem(){
   lbTitle.textContent =
     it.title;
 
-  // lbSub.textContent =
-  //   it.sub;
-
   lbSub.textContent =
-  isSong
-    ? it.year
-    : `${it.medium} — ${it.year}`;
+    isSong
+      ? it.year
+      : `${it.medium} — ${it.year}`;
 
   lightbox.classList.add('open');
 
